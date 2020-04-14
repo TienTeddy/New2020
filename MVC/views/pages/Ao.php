@@ -11,14 +11,13 @@
     <div class='search'>
             <input class="form-control" id="search" type="text" placeholder="Search..">
         </div>
-        <div class='icon-shopping btn btn-primary'><i style='font-size:24px;float:left' class='fas'>&#xf217;</i>Shopping Card</div>
         <!--//search-->
         <br><br>
         <?php
             while($row = mysqli_fetch_array($data["sanpham"])){
             ?>
                 <div class='sanpham' id='sanpham'>
-                    <img class='img-sp' src="/New2020/public/images/ao1.jpg"/>
+                    <img class='img-sp' src="../public/images/ao1.jpg"/>
                     <button class='btn1'><?php echo $row["tensp"]; ?></button>
                     <div class='sale'></div>
                     
@@ -51,5 +50,4 @@
         ?>
         </div>
 </body>
-</html>
 </html>

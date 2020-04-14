@@ -1,29 +1,39 @@
 <?php
 class Home extends Controller{
+
+        public $SinhVienModel;
+
+        function __construct(){
+
+            $this->SinhVienModel=$this->model("SinhVienModel");
+        }
+
         function index(){
-            //Views
-            $str="Tien handsome";
-            $this->View("index",[
-                "page"=>"contact",
-                "params"=>$str,
 
+             $this->View("index",[
+                "Page"=>"SanPham",
+                "sanpham"=>$this->SinhVienModel->GetSanPham("ShowAll")
             ]);
         }
 
-        function detail(){
-            $sv=$this->Model("SinhVienModel");
-            echo $sv->GetSV();
+        function Detail($sp){
+             $this->View("index",[
+                "Page"=>"SanPham",
+                "sanpham"=>$this->SinhVienModel->GetSanPham($sp)
+             ]);
         }
-        
-        function Show(){
-
-            //Views
-            $str="Tien handsome";
+        function AddProduct($masp){
             $this->View("index",[
-                "page"=>"contact",
-                "params"=>$str,
-
+                "Page"=>"SanPham",
+                "sanpham"=>$this->SinhVienModel->AddProduct($masp)
             ]);
         }
+
+        function news(){
+            $this->View("index",[
+               "Page"=>"News",
+               "sanpham"=>$this->SinhVienModel->GetNews()
+            ]);
+       }
     }
 ?>

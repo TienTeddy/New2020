@@ -9,9 +9,9 @@
 <body>
     <!--search-->
     <div class='search'>
-            <input class="form-control" id="search" type="text" placeholder="Search..">
+            <input class="form-control" id="search" type="text" placeholder="Search.." style='display:inline-block'>
         </div>
-        <div class='icon-shopping btn btn-primary'><i style='font-size:24px;float:left' class='fas'>&#xf217;</i>Shopping Card</div>
+        <div class='icon-shopping btn btn-primary' data-toggle="modal" data-target="#exampleModalCenter"><i style='font-size:24px;float:left' class='fas'>&#xf217;</i>Shopping Card</div>
         <!--//search-->
         <br><br>
         <?php
@@ -20,10 +20,13 @@
                 <div class='sanpham' id='sanpham'>
                     <img class='img-sp' src="/New2020/public/images/ao1.jpg"/>
                     <button class='btn1'><?php echo $row["tensp"]; ?></button>
-                    <div class='sale'></div>
+                    <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
                     
                     <div class='chitietgio'>
-                        <a href="#" class="btn btn-info giohang"><span class="glyphicon glyphicon-shopping-cart"></span>Giỏ hàng</a>
+                        <!--xem-->
+                        <a href="#" class="btn btn-success giohang"><i style='font-size:24px' class='fas'>&#xf06e;</i></a>
+                        <!--thêm-->
+                        <?php echo "<a href='/New2020/home/addproduct/".$row["masp"]."' class='btn btn-primary giohang'><i style='font-size:24px' class='fas'>&#xf217;</i></a>"?> 
                         <br><br><br>
                         <div class='chitietgio1'>  
                             <div class="radio">
@@ -50,6 +53,26 @@
             }
         ?>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+        </div>
 </body>
-</html>
 </html>

@@ -29,7 +29,7 @@
             
 
             //require_once "./MVC/controllers/".$this->controller.".php";
-            
+            //hàm gọi chạy function nào?
             call_user_func_array([$this->controller, $this->action], $this->params );
         }
 
